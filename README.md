@@ -16,3 +16,4 @@ Day 7 - Arithmetics on Images and how it impacts the image output.
         Image masking, blurring, edge detection using canny.
         Project #1 - Sketch generator via webcam feed.
       
+ 
