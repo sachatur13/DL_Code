@@ -3,7 +3,7 @@
 Repository for python code and projects during my 100 days of ML learning. Updated regularly.
 
 Day 1 - I was already enrolled in the udemy course, Tensorflow and Keras Deep Learning Bootcamp on Udemy.
-        Topic - Autoencoders for dimensionality reduction.
+        Topic - Autoencoders for dimensionality reduction.\n
 Day 2 - Autoencoders - Image reconstruction and cleaning.
 Day 3 - GANs - What, Why and How to implement GANs for image generation.
 Day 4 - ML Deployment using Flask HTML. I am more inclined towards using streamlit as it is easier to code and deploy.
