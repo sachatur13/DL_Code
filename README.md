@@ -24,6 +24,6 @@ Day 7 - Arithmetics on Images and how it impacts the image output.
 
 Day 8 - Image segmentation and contours
 
-Day 9 - 
+Day 9 - Approximating contours, matching shapes, finding convex contours
       
  
