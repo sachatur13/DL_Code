@@ -26,5 +26,7 @@ Day 8 - Image segmentation and contours
 
 Day 9 - Approximating contours, matching shapes, finding convex contours
 
-Day 10 - Finding lines, blob detection, Object detection intro (Small project to find the object in a image using Template Matching)
- 
+Day 10 - Finding lines, blob detection, Object detection intro (Small project to find the object in a image using Template Matching),
+        Object matching using webcam using ORB matcher.
+
+Day 11 - HOG (Histogram of Gradients), Using haarcascade classifiers for car, face, body in videos and live webcam feeds
