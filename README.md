@@ -32,3 +32,5 @@ Day 10 - Finding lines, blob detection, Object detection intro (Small project to
 Day 11 - HOG (Histogram of Gradients), Using haarcascade classifiers for car, face, body in videos and live webcam feeds
 
 Day 12 - Facial landmark detection, Project - Yawn detector, Written number classifier
+
+Day 13 - Face recognition project
