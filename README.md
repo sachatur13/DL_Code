@@ -37,4 +37,4 @@ Day 13 - Face recognition project
 
 Day 14 - Object tracking, CAMShift and MeanShift tracking.
 
-Day 15 - Start - Automatic number plate recognition, Computer Vision and deep learning
+Day 15 - Start - Automatic number plate recognition, Computer Vision and deep learning, Digit recognition with CNN+OpenCV
