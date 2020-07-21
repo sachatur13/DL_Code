@@ -36,3 +36,5 @@ Day 12 - Facial landmark detection, Project - Yawn detector, Written number clas
 Day 13 - Face recognition project
 
 Day 14 - Object tracking, CAMShift and MeanShift tracking.
+
+Day 15 - Start - Automatic number plate recognition, Computer Vision and deep learning
