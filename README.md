@@ -39,5 +39,8 @@ Day 14 - Object tracking, CAMShift and MeanShift tracking.
 
 Day 15 - Start - Automatic number plate recognition, Computer Vision and deep learning, Digit recognition with CNN+OpenCV
 
+These topics are part of the computer vision course I am going through. Cover a high level information.
 Day 16 - Intro NN, Activation functions, Forward propagation, Loss functions, Steps for training  NN,
-        Back propagation and Gradient Descent, Regularization (L1[Lasso], L2[Ridge]), Cross Validation, Early Stopping, Dropout, Image/Data Augmentation, Epochs and batch sizes, Performance and Confusion matrix
+Back propagation and Gradient Descent, Regularization (L1[Lasso], L2[Ridge]), Cross Validation, Early Stopping, Dropout, Image/Data Augmentation, Epochs and batch sizes, Performance and Confusion matrix.
+
+Day 17 - Convolution NN, Convolutions, Image features, convolution process, Depth, Stride and Padding, ReLu (max(o,x)), Pooling [Max / Average]        
