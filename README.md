@@ -44,3 +44,5 @@ Day 16 - Intro NN, Activation functions, Forward propagation, Loss functions, St
 Back propagation and Gradient Descent, Regularization (L1[Lasso], L2[Ridge]), Cross Validation, Early Stopping, Dropout, Image/Data Augmentation, Epochs and batch sizes, Performance and Confusion matrix.
 
 Day 17 - Convolution NN, Convolutions, Image features, convolution process, Depth, Stride and Padding, ReLu (max(o,x)), Pooling [Max / Average]        
+
+Day 18 - Training a CNN using tensorflow on MNIST dataset, Train test splits on Image data, Cat vs dog classifier, Data augmentation for improving the model
