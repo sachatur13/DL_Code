@@ -46,3 +46,5 @@ Back propagation and Gradient Descent, Regularization (L1[Lasso], L2[Ridge]), Cr
 Day 17 - Convolution NN, Convolutions, Image features, convolution process, Depth, Stride and Padding, ReLu (max(o,x)), Pooling [Max / Average]        
 
 Day 18 - Training a CNN using tensorflow on MNIST dataset, Train test splits on Image data, Cat vs dog classifier, Data augmentation for improving the model
+
+Day 19 - OpenCV Course completed. Explainable Machine Learning using LIME.
