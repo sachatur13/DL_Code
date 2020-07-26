@@ -48,3 +48,5 @@ Day 17 - Convolution NN, Convolutions, Image features, convolution process, Dept
 Day 18 - Training a CNN using tensorflow on MNIST dataset, Train test splits on Image data, Cat vs dog classifier, Data augmentation for improving the model
 
 Day 19 - OpenCV Course completed. Explainable Machine Learning using LIME.
+
+Day 20 - Recurrent Neural networks from the book - Deep Learning (Ian Goodfellow)
