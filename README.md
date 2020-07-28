@@ -51,4 +51,7 @@ Day 19 - OpenCV Course completed. Explainable Machine Learning using LIME.
 
 Day 20 - Recurrent Neural networks from the book - Deep Learning (Ian Goodfellow)
 
-Day 21 - Time series data, seasonality, requirements for time series analysis, data restrictions, transforming data for time series analysis, use of the QQ plots for identifying the data distribution. Reinforcement Learning intro, Probability distributions, joint and conditional distribution
+Day 21 - Time series data, seasonality, requirements for time series analysis, data restrictions, transforming data for time series analysis, use of the QQ plots for identifying the data distribution. Reinforcement Learning intro, Probability distributions, joint and conditional distribution.
+
+Day 22 - Indexing, setting frequencies in the dataset, White noise, autocorrelation.
+Reinforcement Learning. Epsilon Greedy Algorithm 
