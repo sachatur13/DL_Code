@@ -55,3 +55,5 @@ Day 21 - Time series data, seasonality, requirements for time series analysis, d
 
 Day 22 - Indexing, setting frequencies in the dataset, White noise, autocorrelation.
 Reinforcement Learning. Epsilon Greedy Algorithm 
+
+Day 23 - White noise, random walk data, stationary data - dickey fuller test, seasonality - additive and multiplicative. Analysing the seasonal decomposition plots.
