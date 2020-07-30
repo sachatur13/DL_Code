@@ -57,3 +57,6 @@ Day 22 - Indexing, setting frequencies in the dataset, White noise, autocorrelat
 Reinforcement Learning. Epsilon Greedy Algorithm 
 
 Day 23 - White noise, random walk data, stationary data - dickey fuller test, seasonality - additive and multiplicative. Analysing the seasonal decomposition plots.
+
+Day 24 - Autocorrelation, ACF, plotting ACF using the statsmodels plot_acf function, analysing the plot and making decisions, using PACF for finding only direct relationships and skipping out the indirect effects.
+Autoregressive (AR) model for time series. Using log likelihood ratio test for finding the best model and lag value.
