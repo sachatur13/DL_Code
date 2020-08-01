@@ -62,3 +62,5 @@ Day 24 - Autocorrelation, ACF, plotting ACF using the statsmodels plot_acf funct
 Autoregressive (AR) model for time series. Using log likelihood ratio test for finding the best model and lag value.
 
 Day 25 - Log likelihood test for identifying the right complexity of the models (Lags), analysing the ACF and PACF plots, Normalizing the dataset, Analysing the residuals for identifying the fit of the model.
+
+Day 26 - Sequence modelling, RNNs
