@@ -68,3 +68,5 @@ Day 26 - Sequence modelling, RNNs
 Day 27 - Blog on sequence models, RNN and LSTM introduction and intuition.
 
 Day 28 - Moving average models (MA), implementing MA model, analysing ACF plots and model summaries for MA models. 
+
+Day 29 - ARMA models
