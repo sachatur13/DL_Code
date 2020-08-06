@@ -72,3 +72,5 @@ Day 28 - Moving average models (MA), implementing MA model, analysing ACF plots 
 Day 29 - ARMA models, Implementation using statsmodels
 
 Day 29 - ARIMA models for non-stationary data.
+
+Day 30 - SARIMAX models for incorporating seasonality, ARIMAX models for incorporating other factors affecting the output.
