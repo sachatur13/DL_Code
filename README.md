@@ -76,3 +76,5 @@ Day 29 - ARIMA models for non-stationary data.
 Day 30 - SARIMAX models for incorporating seasonality, ARIMAX models for incorporating other factors affecting the output.
 
 Day 31 - ARCH - Autoregressive conditional heteroscedasticity model, Auto ARIMA
+
+Day 32 - Forecasting
