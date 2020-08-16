@@ -77,6 +77,10 @@ Day 30 - SARIMAX models for incorporating seasonality, ARIMAX models for incorpo
 
 Day 31 - ARCH - Autoregressive conditional heteroscedasticity model, Auto ARIMA
 
+<<<<<<< HEAD
 Day 32 - Forecasting
 
 Dat 33 - Start with project - Navigate mouse with finger using OpenCV.
+=======
+Day 32 - Forecasting
+>>>>>>> master
