@@ -77,4 +77,8 @@ Day 30 - SARIMAX models for incorporating seasonality, ARIMAX models for incorpo
 
 Day 31 - ARCH - Autoregressive conditional heteroscedasticity model, Auto ARIMA
 
-Day 32 - Forecasting
+Day 32 - Forecasting day 1
+
+Day 33 - Forecasting day 2
+
+Day 34 - Started with ML project for training, testing and modeling.
