@@ -20,7 +20,7 @@ if st.button('View Sample Data'):
 if st.button('Reset'):
     st.empty()
     caching.clear_cache()                
-    del uploaded_input_data
+    
 
     
 
