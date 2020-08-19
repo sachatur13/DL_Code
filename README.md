@@ -82,3 +82,6 @@ Day 32 - Forecasting day 1
 Day 33 - Forecasting day 2
 
 Day 34 - Started with ML project for training, testing and modeling.
+
+Day 35 - Added components on the UI.
+Deep Learning - Ian Goodfellow (Convolution NN)
