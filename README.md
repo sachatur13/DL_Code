@@ -85,3 +85,5 @@ Day 34 - Started with ML project for training, testing and modeling.
 
 Day 35 - Added components on the UI.
 Deep Learning - Ian Goodfellow (Convolution NN)
+
+Day 36 - Added linear regression components on the project.

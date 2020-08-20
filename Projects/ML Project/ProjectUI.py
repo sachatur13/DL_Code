@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from streamlit import caching
+import LinearRegression as LR
 
 ## Title
 st.title('Open Source Machine Learning App')
@@ -29,12 +30,26 @@ if st.sidebar.checkbox('View Sample Data'):
 if st.sidebar.checkbox('View Dataset details'):
      st.write(input_data.info())
 
-if st.sidebar.checkbox('Plot data'):
-     st.bar_chart(input_data)
 
 st.sidebar.text('Select Model :')
 if st.sidebar.checkbox('Linear Regression'):
-     st.write('You Selected Linear Regression')
-
+     st.title('Linear Regression')
+     target_variable = st.text_input('Input Target Variable','')    
+     test_size = st.slider('Test data size for train test split',0.0,1.0,0.1)
+     if target_variable!='':
+          train_X,test_X,train_y,test_y = LR.get_training_testing_data(input_data,
+                                                                  test_size,
+                                                                  target_variable)
+          st.write('Training data size: ',train_X.shape)
+          st.write('Test data size: ',test_X.shape)
+          
+          input_data_columns = list(input_data.columns.drop(target_variable))
+          selected_column = st.selectbox('Select Variable for scatterplot',(input_data_columns))
+          
+          plot = LR.test_linear_regression_assumptions(target_variable
+                                                       ,selected_column,input_data)
+          st.pyplot()
+          
+     
     
 
