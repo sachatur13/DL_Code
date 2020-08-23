@@ -87,3 +87,9 @@ Day 35 - Added components on the UI.
 Deep Learning - Ian Goodfellow (Convolution NN)
 
 Day 36 - Added linear regression components on the project.
+
+Day 37 - Enrolled into Udemy course for advanced computer Vision.
+
+Day 38 - Added linear model assumption checks in the code
+
+Day 39 - Added the tests for linear assumption check in the code. Tested with some datasets.
