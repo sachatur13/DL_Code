@@ -56,7 +56,7 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
 
 def data_preprocessing(train_X,test_X):
     scaler = StandardScaler()
-    encoder = OneHotEncoder()
+    encoder = LabelEncoder()
     
     train_X = train_X.fillna(method = 'ffill')
     test_X = test_X.fillna(method = 'ffill')
@@ -90,6 +90,10 @@ def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     return regressor,prediction_y,r2
 
 
+def make_predictions_using_linear_regression(input_data,regressor):
     
+    prediction = regressor.predict(input_data)
+    
+    return prediction    
     
     

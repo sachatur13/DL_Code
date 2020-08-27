@@ -12,8 +12,9 @@ st.title('Open Source Machine Learning App')
 uploaded_input_data = st.file_uploader('Upload CSV Data',encoding = 'auto')
 if uploaded_input_data is not None:
      input_data = pd.read_csv(uploaded_input_data)
-     st.write('Null % in the dataset')
-     st.write(input_data.isna().mean()*100)
+     if st.checkbox('View Null %'):
+          st.write('Null % in the dataset')
+          st.write(input_data.isna().mean()*100)
      if st.checkbox('Impute Nulls'):
           imputed_data = input_data.fillna(method = 'ffill')
           st.write(imputed_data.isna().mean()*100)
@@ -21,8 +22,8 @@ else:
      st.write('Input file not found')
      
 def get_column_definition(input_data):
-     numerical_input_columns = input_data.select_dtypes(include = ['int','float32']).columns
-     categorical_input_columns = input_data.select_dtypes(include = ['O']).columns
+     numerical_input_columns = input_data.select_dtypes(include = [np.number]).columns
+     categorical_input_columns = input_data.select_dtypes(include = [object]).columns
      date_input_columns = input_data.select_dtypes(include = ['datetime']).columns
      
      return numerical_input_columns,categorical_input_columns,date_input_columns
@@ -33,11 +34,17 @@ if st.sidebar.checkbox('View Sample Data'):
      n,c,d = get_column_definition(input_data)
      
 if st.sidebar.checkbox('View Dataset details'):
-     st.write(input_data.info())
+     numeric,categorical,date = get_column_definition(input_data)
+     st.write('Numeric Columns: ')
+     st.write(numeric)
+     st.write('Categorical Columns:')
+     st.write(categorical)
+     st.write('Date Time columns:')
+     st.write(date)
 
 
-st.sidebar.text('Select Model :')
-if st.sidebar.checkbox('Linear Regression'):
+st.text('Select Model :')
+if st.checkbox('Linear Regression'):
      st.title('Linear Regression')
      target_variable = st.text_input('Input Target Variable','')    
      test_size = st.slider('Test data size for train test split',0.1,1.0,0.1)
@@ -104,3 +111,15 @@ if st.sidebar.checkbox('Linear Regression'):
                
                st.pyplot()
 
+
+if st.sidebar.checkbox('Prediction'):
+     st.sidebar.empty()
+     numeric,categorical,date = get_column_definition(input_data)
+     st.write(numeric)
+     columns = list(input_data.columns)
+     st.write(columns)
+     ## Create sliders for numerical input
+     for i in iter(numeric):
+          slider = st.sidebar.slider(i,np.min(input_data[i]),np.max(input_data[i]))
+          
+          

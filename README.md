@@ -93,3 +93,10 @@ Day 37 - Enrolled into Udemy course for advanced computer Vision.
 Day 38 - Added linear model assumption checks in the code
 
 Day 39 - Added the tests for linear assumption check in the code. Tested with some datasets.
+
+Day 40 - Added prediction code for linear regression
+
+Day 41 - Added dynamic input values based on column types for predictions
+
+Day 42- Added function for predictions.
+Started Deep Learning: Advanced CV
