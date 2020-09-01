@@ -115,11 +115,11 @@ if st.checkbox('Linear Regression'):
 if st.sidebar.checkbox('Prediction'):
      st.sidebar.empty()
      numeric,categorical,date = get_column_definition(input_data)
-     st.write(numeric)
-     columns = list(input_data.columns)
-     st.write(columns)
-     ## Create sliders for numerical input
-     for i in iter(numeric):
+     dynamic_data_input = []*len(numeric.drop(target_variable))
+    
+     for i in iter(numeric.drop(target_variable)):
           slider = st.sidebar.slider(i,np.min(input_data[i]),np.max(input_data[i]))
+          dynamic_data_input = slider
           
+     st.write(dynamic_data_input)    
           
