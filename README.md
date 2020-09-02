@@ -100,3 +100,5 @@ Day 41 - Added dynamic input values based on column types for predictions
 
 Day 42- Added function for predictions.
 Started Deep Learning: Advanced CV
+
+Day 43 - Added dynamic input and dataframe creation

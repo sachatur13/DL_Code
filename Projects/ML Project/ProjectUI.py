@@ -28,6 +28,14 @@ def get_column_definition(input_data):
      
      return numerical_input_columns,categorical_input_columns,date_input_columns
 
+def create_prediction_dataframe(slider_input,column_names):
+     dynamic_data_input_main=[]
+     dynamic_data_input_main=[]
+     
+         
+     
+     return prediction_dataframe
+
 st.sidebar.title('Use these options for analysis')
 if st.sidebar.checkbox('View Sample Data'):
      st.dataframe(input_data.head())
@@ -111,15 +119,24 @@ if st.checkbox('Linear Regression'):
                
                st.pyplot()
 
-
+          if st.button('Train Predictive Model'):
+               regressor,prediction_y,r2 = LR.fit_linear_regression_model(train_X,test_X,
+                                                                       train_y,test_y)
 if st.sidebar.checkbox('Prediction'):
-     st.sidebar.empty()
+     st.empty()
      numeric,categorical,date = get_column_definition(input_data)
-     dynamic_data_input = []*len(numeric.drop(target_variable))
-    
+     column_names = input_data.columns.drop(target_variable)
+     dynamic_data_input_main = []
+     dynamic_data_input_inner = []
      for i in iter(numeric.drop(target_variable)):
-          slider = st.sidebar.slider(i,np.min(input_data[i]),np.max(input_data[i]))
-          dynamic_data_input = slider
-          
-     st.write(dynamic_data_input)    
-          
+          slider_input = st.sidebar.slider(i,np.min(input_data[i]),np.max(input_data[i]))
+          dynamic_data_input_inner.append(slider_input)
+     
+     dynamic_data_input_main.append(dynamic_data_input_inner)
+    
+     prediction_dataframe = pd.DataFrame(dynamic_data_input_main,
+                                         columns=column_names) 
+     
+     st.dataframe(prediction_dataframe)
+     
+     #prediction = LR.make_predictions_using_linear_regression(prediction_dataframe)
