@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler,OneHotEncoder
+from sklearn.preprocessing import StandardScaler,OneHotEncoder,LabelEncoder
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -54,26 +54,32 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
         return corr_plot
     
 
-def data_preprocessing(train_X,test_X):
+def data_preprocessing(train_X,test_X,mode,prediction_data = None):
     scaler = StandardScaler()
     encoder = LabelEncoder()
     
-    train_X = train_X.fillna(method = 'ffill')
-    test_X = test_X.fillna(method = 'ffill')
+    if mode == 'training':
+        train_X = train_X.fillna(method = 'ffill')
+        test_X = test_X.fillna(method = 'ffill')
+        train_X_transformed = scaler.fit_transform(train_X)
+        test_X_transformed = scaler.transform(test_X)
+    else:
+        train_X_transformed,test_X_transformed = None,None
     
-    train_X_transformed = scaler.fit_transform(train_X)
-    test_X_transformed = scaler.transform(test_X)
     
+    if mode == 'prediction':
+        encoded_prediction_data = scaler.transform(prediction_data)
+    else:
+        encoded_prediction_data=None
     
-    
-    return train_X_transformed,test_X_transformed
+    return train_X_transformed,test_X_transformed,encoded_prediction_data
 
 def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     
     ''' Fitting linear regression model.'''
     
     
-    train_X_transformed,test_X_transformed = data_preprocessing(train_X,test_X)
+    train_X_transformed,test_X_transformed,_ = data_preprocessing(train_X,test_X,'training')
     
     ## Get training and testing splits
         
@@ -92,8 +98,13 @@ def fit_linear_regression_model(train_X,test_X,train_y,test_y):
 
 def make_predictions_using_linear_regression(input_data,regressor):
     
-    prediction = regressor.predict(input_data)
+   
+    _,encoded_data = data_preprocessing(None,None,'prediction',input_data)
+    encoded_data = encoded_data.reshape(1,-1)
     
-    return prediction    
+    #prediction = regressor.predict(encoded_data)
+    
+    
+    return encoded_data
     
     

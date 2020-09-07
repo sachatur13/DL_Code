@@ -119,9 +119,10 @@ if st.checkbox('Linear Regression'):
                
                st.pyplot()
 
-          if st.button('Train Predictive Model'):
+          if st.checkbox('Train Predictive Model'):
                regressor,prediction_y,r2 = LR.fit_linear_regression_model(train_X,test_X,
                                                                        train_y,test_y)
+               st.write(r2)
 if st.sidebar.checkbox('Prediction'):
      st.empty()
      numeric,categorical,date = get_column_definition(input_data)
@@ -139,4 +140,4 @@ if st.sidebar.checkbox('Prediction'):
      
      st.dataframe(prediction_dataframe)
      
-     #prediction = LR.make_predictions_using_linear_regression(prediction_dataframe)
+     prediction = LR.make_predictions_using_linear_regression(prediction_dataframe,regressor)

@@ -101,4 +101,6 @@ Day 41 - Added dynamic input values based on column types for predictions
 Day 42- Added function for predictions.
 Started Deep Learning: Advanced CV
 
-Day 43 - Added dynamic input and dataframe creation
+Day 43 - Added dynamic input and dataframe creation, Book - Executive Data Science
+
+Day 44 - VGG and Transfer learning, What is VGG, Using pretrained model in keras
