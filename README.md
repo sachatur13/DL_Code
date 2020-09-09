@@ -104,3 +104,5 @@ Started Deep Learning: Advanced CV
 Day 43 - Added dynamic input and dataframe creation, Book - Executive Data Science
 
 Day 44 - VGG and Transfer learning, What is VGG, Using pretrained model in keras
+
+Day 45 - Transfer learning with Keras, using VGG16 model for transfer learning

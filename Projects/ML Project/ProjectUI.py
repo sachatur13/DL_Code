@@ -140,4 +140,5 @@ if st.sidebar.checkbox('Prediction'):
      
      st.dataframe(prediction_dataframe)
      
-     prediction = LR.make_predictions_using_linear_regression(prediction_dataframe,regressor)
+     prediction,input_data = LR.make_predictions_using_linear_regression(prediction_dataframe,regressor)
+     st.write(input_data)

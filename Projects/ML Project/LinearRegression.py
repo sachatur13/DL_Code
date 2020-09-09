@@ -65,21 +65,22 @@ def data_preprocessing(train_X,test_X,mode,prediction_data = None):
         test_X_transformed = scaler.transform(test_X)
     else:
         train_X_transformed,test_X_transformed = None,None
-    
+    return train_X_transformed,test_X_transformed
     
     if mode == 'prediction':
-        encoded_prediction_data = scaler.transform(prediction_data)
+        encoded_prediction_data = fitted_scaler.transform(prediction_data)
     else:
         encoded_prediction_data=None
+    return encoded_prediction_data
     
-    return train_X_transformed,test_X_transformed,encoded_prediction_data
+    
 
 def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     
     ''' Fitting linear regression model.'''
     
     
-    train_X_transformed,test_X_transformed,_ = data_preprocessing(train_X,test_X,'training')
+    train_X_transformed,test_X_transformed = data_preprocessing(train_X,test_X,'training')
     
     ## Get training and testing splits
         
@@ -99,12 +100,11 @@ def fit_linear_regression_model(train_X,test_X,train_y,test_y):
 def make_predictions_using_linear_regression(input_data,regressor):
     
    
-    _,encoded_data = data_preprocessing(None,None,'prediction',input_data)
-    encoded_data = encoded_data.reshape(1,-1)
-    
+    encoded_data = data_preprocessing(None,None,'prediction',input_data)
+    input_data = input_data
     #prediction = regressor.predict(encoded_data)
     
     
-    return encoded_data
+    return encoded_data,input_data
     
     
