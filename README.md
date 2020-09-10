@@ -106,3 +106,5 @@ Day 43 - Added dynamic input and dataframe creation, Book - Executive Data Scien
 Day 44 - VGG and Transfer learning, What is VGG, Using pretrained model in keras
 
 Day 45 - Transfer learning with Keras, using VGG16 model for transfer learning
+
+Day 46 - Using VGG16 model for own data
