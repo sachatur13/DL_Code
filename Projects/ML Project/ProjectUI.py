@@ -15,6 +15,7 @@ if uploaded_input_data is not None:
      if st.checkbox('View Null %'):
           st.write('Null % in the dataset')
           st.write(input_data.isna().mean()*100)
+          
      if st.checkbox('Impute Nulls'):
           imputed_data = input_data.fillna(method = 'ffill')
           st.write(imputed_data.isna().mean()*100)
@@ -140,5 +141,7 @@ if st.sidebar.checkbox('Prediction'):
      
      st.dataframe(prediction_dataframe)
      
-     prediction,input_data = LR.make_predictions_using_linear_regression(prediction_dataframe,regressor)
+     prediction,input_data,prediction = LR.make_predictions_using_linear_regression(prediction_dataframe,regressor)
      st.write(input_data)
+     st.write(prediction)
+     

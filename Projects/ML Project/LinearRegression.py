@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler,OneHotEncoder,LabelEncoder
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import pickle
 
 def get_training_testing_data(input_data,test_size,y):
     
@@ -54,33 +54,29 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
         return corr_plot
     
 
-def data_preprocessing(train_X,test_X,mode,prediction_data = None):
+def data_preprocessing_training(train_X,test_X):
     scaler = StandardScaler()
     encoder = LabelEncoder()
+    train_X = train_X.fillna(method = 'ffill')
+    test_X = test_X.fillna(method = 'ffill')
+    train_X_transformed = scaler.fit_transform(train_X)
+    test_X_transformed = scaler.transform(test_X)
+    pickle.dump(scaler,open('numerical_scaler.pkl','wb'))
     
-    if mode == 'training':
-        train_X = train_X.fillna(method = 'ffill')
-        test_X = test_X.fillna(method = 'ffill')
-        train_X_transformed = scaler.fit_transform(train_X)
-        test_X_transformed = scaler.transform(test_X)
-    else:
-        train_X_transformed,test_X_transformed = None,None
     return train_X_transformed,test_X_transformed
     
-    if mode == 'prediction':
-        encoded_prediction_data = fitted_scaler.transform(prediction_data)
-    else:
-        encoded_prediction_data=None
-    return encoded_prediction_data
+def data_preprocessing_predictions(input_data):
+    scaler = pickle.load(open('numerical_scaler.pkl','rb'))
+    transformed_input = scaler.transform(input_data)
     
-    
+    return transformed_input    
 
 def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     
     ''' Fitting linear regression model.'''
     
     
-    train_X_transformed,test_X_transformed = data_preprocessing(train_X,test_X,'training')
+    train_X_transformed,test_X_transformed = data_preprocessing_training(train_X,test_X)
     
     ## Get training and testing splits
         
@@ -100,11 +96,11 @@ def fit_linear_regression_model(train_X,test_X,train_y,test_y):
 def make_predictions_using_linear_regression(input_data,regressor):
     
    
-    encoded_data = data_preprocessing(None,None,'prediction',input_data)
+    encoded_data = data_preprocessing_predictions(input_data)
     input_data = input_data
-    #prediction = regressor.predict(encoded_data)
+    prediction = regressor.predict(encoded_data)
     
     
-    return encoded_data,input_data
+    return encoded_data,input_data,prediction
     
     
