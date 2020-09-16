@@ -1,3 +1,16 @@
+'''
+Author - Saket Chaturvedi
+
+Title - Script for UI using streamlit library
+
+In progress components -
+Error handling using try catch blocks
+Adding pagination in the UI
+Adding details on the widgets
+Replacing checkboxes with dropdowns or similar
+
+'''
+
 ## Importing Libraries
 import numpy as np
 import pandas as pd
@@ -8,20 +21,24 @@ import LinearRegression as LR
 ## Title
 st.title('Open Source Machine Learning App')
 
-## Adding sidebar and listbox for data view and model selection
+## Add file uploader widget
 uploaded_input_data = st.file_uploader('Upload CSV Data',encoding = 'auto')
 if uploaded_input_data is not None:
      input_data = pd.read_csv(uploaded_input_data)
+
+## Check Null values in the dataset
      if st.checkbox('View Null %'):
           st.write('Null % in the dataset')
           st.write(input_data.isna().mean()*100)
-          
+
+## Impute Nulls {Current method : ffill}          
      if st.checkbox('Impute Nulls'):
           imputed_data = input_data.fillna(method = 'ffill')
           st.write(imputed_data.isna().mean()*100)
 else:
      st.write('Input file not found')
-     
+
+## Extract dataset column definition     
 def get_column_definition(input_data):
      numerical_input_columns = input_data.select_dtypes(include = [np.number]).columns
      categorical_input_columns = input_data.select_dtypes(include = [object]).columns
@@ -29,6 +46,7 @@ def get_column_definition(input_data):
      
      return numerical_input_columns,categorical_input_columns,date_input_columns
 
+## Create empty dataframe for prediction inputs
 def create_prediction_dataframe(slider_input,column_names):
      dynamic_data_input_main=[]
      dynamic_data_input_main=[]
@@ -37,11 +55,15 @@ def create_prediction_dataframe(slider_input,column_names):
      
      return prediction_dataframe
 
+## Add sidebar titles
 st.sidebar.title('Use these options for analysis')
+
+## Checkbox for sample data using head() method.
 if st.sidebar.checkbox('View Sample Data'):
      st.dataframe(input_data.head())
      n,c,d = get_column_definition(input_data)
      
+## View column names by datatype {Numeric, Categorical, DateTime}     
 if st.sidebar.checkbox('View Dataset details'):
      numeric,categorical,date = get_column_definition(input_data)
      st.write('Numeric Columns: ')
@@ -52,24 +74,29 @@ if st.sidebar.checkbox('View Dataset details'):
      st.write(date)
 
 
+## Select predictive model. Currently only Linear Regression
 st.text('Select Model :')
 if st.checkbox('Linear Regression'):
      st.title('Linear Regression')
+     
+     ## Get Target variable from dataset
      target_variable = st.text_input('Input Target Variable','')    
      test_size = st.slider('Test data size for train test split',0.1,1.0,0.1)
      if target_variable!='':
+     ## Train test split using the sliders
           train_X,test_X,train_y,test_y = LR.get_training_testing_data(imputed_data,
                                                                   test_size,
                                                                   target_variable)
           st.write('Training data size: ',train_X.shape)
           st.write('Test data size: ',test_X.shape)
           
+          ## Linear model tests
           st.write('Test for Linear Model Validation')
           
           if st.checkbox('Linearity Test'):
                test_type = 'Linearity'
                input_data_columns = list(imputed_data.columns.drop(target_variable))
-          #st.write(input_data_columns)
+          
                selected_column = st.selectbox('Select columns for plot',(input_data_columns))
                st.write(selected_column)
                plot = LR.test_linear_regression_assumptions(target_variable
@@ -124,6 +151,8 @@ if st.checkbox('Linear Regression'):
                regressor,prediction_y,r2 = LR.fit_linear_regression_model(train_X,test_X,
                                                                        train_y,test_y)
                st.write(r2)
+
+## Use the trained model for predictions
 if st.sidebar.checkbox('Prediction'):
      st.empty()
      numeric,categorical,date = get_column_definition(input_data)

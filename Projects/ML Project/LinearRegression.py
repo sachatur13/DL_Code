@@ -1,3 +1,10 @@
+'''
+Author - Saket Chaturvedi
+
+Title - Script for linear regression model
+
+'''
+
 ## Importing Linear Regression Library from sklearn
 import pandas as pd
 import numpy as np
@@ -8,6 +15,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
 
+### Training and testing split
 def get_training_testing_data(input_data,test_size,y):
     
     X = input_data.drop(y,axis = 1)
@@ -18,6 +26,7 @@ def get_training_testing_data(input_data,test_size,y):
                                                      ,random_state = 42)
     return train_X,test_X,train_y,test_y
 
+### Test for linear regression assumptions
 def test_linear_regression_assumptions(y,selected_column,input_data,
                                        test_type,validation,predicted=False):
     
@@ -54,6 +63,7 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
         return corr_plot
     
 
+## Data preprocessing for training data. Scaler is used for encoding the test data.
 def data_preprocessing_training(train_X,test_X):
     scaler = StandardScaler()
     encoder = LabelEncoder()
@@ -64,13 +74,15 @@ def data_preprocessing_training(train_X,test_X):
     pickle.dump(scaler,open('numerical_scaler.pkl','wb'))
     
     return train_X_transformed,test_X_transformed
-    
+
+## Data preprocessing for testing data. Scaler from training is used.    
 def data_preprocessing_predictions(input_data):
     scaler = pickle.load(open('numerical_scaler.pkl','rb'))
     transformed_input = scaler.transform(input_data)
     
     return transformed_input    
 
+## Fitting predictive model.
 def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     
     ''' Fitting linear regression model.'''
@@ -92,7 +104,7 @@ def fit_linear_regression_model(train_X,test_X,train_y,test_y):
     
     return regressor,prediction_y,r2
 
-
+## Predictions using Linear regression model
 def make_predictions_using_linear_regression(input_data,regressor):
     
    
