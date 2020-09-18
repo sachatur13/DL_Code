@@ -110,3 +110,7 @@ Day 45 - Transfer learning with Keras, using VGG16 model for transfer learning
 Day 46 - Using VGG16 model for own data
 
 Day 47 - Review of Logistic regression models - ISLR
+
+Day 48 - Autoencoders (Deep Learning Ian Goodfellow), Undercomplete Autoencoders
+
+Day 49 - Regularized Autoencoders, Added comments on the app

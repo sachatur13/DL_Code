@@ -31,16 +31,18 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
                                        test_type,validation,predicted=False):
     
     ## linear_assumption_1. Linear Relationship between variables.
+    
     ## Tested using scatterplot
     if test_type == 'Linearity':
         pair_plot = sns.pairplot(input_data,x_vars = [selected_column],y_vars = y)
         return pair_plot
-    ## Linear assumption 2 , zero residual mean
     
+    ## Linear assumption 2 , zero residual mean
     if test_type == 'Residual Mean':
         residuals = validation.values - predicted
         mean_residuals = np.round(np.mean(residuals),2)
         return mean_residuals
+    
     ## Linear Assumption 3 , check for equal variance 
     if test_type == 'Homoscedasticity' or test_type == 'Autocorrelation':
         residuals = validation.values - predicted
@@ -53,11 +55,13 @@ def test_linear_regression_assumptions(y,selected_column,input_data,
         
         return residual_plot
     
+    ## Normal distribution of error terms
     if test_type == 'Normality':
         residuals = validation.values - predicted
         error_plot = sns.distplot(residuals)            
         return error_plot
     
+    ## Multicollinearity check
     if test_type == 'Multicollinearity':
         corr_plot = sns.heatmap(input_data.corr(),annot = True)
         return corr_plot

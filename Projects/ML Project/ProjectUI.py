@@ -16,7 +16,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from streamlit import caching
-import SessionState
 import LinearRegression as LR
 
 ## Title
@@ -27,13 +26,6 @@ uploaded_input_data = st.file_uploader('Upload CSV Data',encoding = 'auto')
 if uploaded_input_data is not None:
      input_data = pd.read_csv(uploaded_input_data)
 
-## Add selectbox for data processing
-     selector = st.selectbox('',['None','View Null%','View Dataset details','View sample Data'])
-     session_state = SessionState.get(a='None',b='None',c='None',d='None')
-     
-     if selector =='None':
-          session_state.a = 'None'
-          st.write({session_state.a})
 ## Check Null values in the dataset
      if st.checkbox('View Null %'):
           st.write('Null % in the dataset')
@@ -85,6 +77,7 @@ if st.sidebar.checkbox('View Dataset details'):
 ## Select predictive model. Currently only Linear Regression
 st.write('Select Encoding Method for Categorical data')
 encoding_method = st.selectbox('',['None','One-Hot Encoding','Label Encoder'])     
+
 st.text('Select Model :')
 if st.checkbox('Linear Regression'):
      st.title('Linear Regression')
