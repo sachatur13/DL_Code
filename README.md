@@ -78,9 +78,49 @@ Day 30 - SARIMAX models for incorporating seasonality, ARIMAX models for incorpo
 Day 31 - ARCH - Autoregressive conditional heteroscedasticity model, Auto ARIMA
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Day 32 - Forecasting
 
 Dat 33 - Start with project - Navigate mouse with finger using OpenCV.
 =======
 Day 32 - Forecasting
+>>>>>>> master
+=======
+Day 32 - Forecasting day 1
+
+Day 33 - Forecasting day 2
+
+Day 34 - Started with ML project for training, testing and modeling.
+
+Day 35 - Added components on the UI.
+Deep Learning - Ian Goodfellow (Convolution NN)
+
+Day 36 - Added linear regression components on the project.
+
+Day 37 - Enrolled into Udemy course for advanced computer Vision.
+
+Day 38 - Added linear model assumption checks in the code
+
+Day 39 - Added the tests for linear assumption check in the code. Tested with some datasets.
+
+Day 40 - Added prediction code for linear regression
+
+Day 41 - Added dynamic input values based on column types for predictions
+
+Day 42- Added function for predictions.
+Started Deep Learning: Advanced CV
+
+Day 43 - Added dynamic input and dataframe creation, Book - Executive Data Science
+
+Day 44 - VGG and Transfer learning, What is VGG, Using pretrained model in keras
+
+Day 45 - Transfer learning with Keras, using VGG16 model for transfer learning
+
+Day 46 - Using VGG16 model for own data
+
+Day 47 - Review of Logistic regression models - ISLR
+
+Day 48 - Autoencoders (Deep Learning Ian Goodfellow), Undercomplete Autoencoders
+
+Day 49 - Regularized Autoencoders, Added comments on the app
 >>>>>>> master
